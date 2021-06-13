@@ -7,10 +7,11 @@ import com.example.mdtp.stevdza.model.Post
 
 import com.example.mdtp.stevdza.repository.Repository
 import kotlinx.coroutines.launch
+import retrofit2.Response
 
 class MainViewModel(private val repository: Repository) : ViewModel() {
 
-    val myResponse: MutableLiveData<Post> = MutableLiveData()
+    val myResponse: MutableLiveData<Response<Post>> = MutableLiveData()
 
     fun getPost() {
         viewModelScope.launch {

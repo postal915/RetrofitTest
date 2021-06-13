@@ -17,15 +17,20 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var repository = Repository()
-        var viewModelFactory = MainViewModelFactory(repository)
+        val repository = Repository()
+        val viewModelFactory = MainViewModelFactory(repository)
         viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
         viewModel.getPost()
         viewModel.myResponse.observe(this, Observer { response ->
-            Log.d("Response", response.userId.toString())
-            Log.d("Response", response.id.toString())
-            Log.d("Response", response.title.toString())
-            Log.d("Response", response.body.toString())
+            if (response.isSuccessful) {
+                Log.d("Response", response.body()?.userId.toString())
+                Log.d("Response", response.body()?.id.toString())
+                Log.d("Response", response.body()?.title!!)
+                Log.d("Response", response.body()?.body!!)
+            } else {
+                Log.d("Response error", response.errorBody().toString())
+                Log.d("Response code", response.code().toString())
+            }
         })
     }
 }
