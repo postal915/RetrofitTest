@@ -17,4 +17,8 @@ class Repository {
     suspend fun getCustomPosts(userId: Int, sort: String, order: String): Response<List<Post>> {
         return RetrofitInstance.api.getCustomPosts(userId, sort, order)
     }
+
+    suspend fun getCustomPosts2(userId: Int, option: Map<String, String>): Response<List<Post>> {
+        return RetrofitInstance.api.getCustomPosts2(userId, option)
+    }
 }
