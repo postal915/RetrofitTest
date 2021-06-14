@@ -6,6 +6,7 @@ import android.util.Log
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.retrofittest.repository.Repository
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -25,6 +26,7 @@ class MainActivity : AppCompatActivity() {
                 Log.d("Response", response.body()?.id.toString())
                 Log.d("Response", response.body()?.title!!)
                 Log.d("Response", response.body()?.body!!)
+                textView.text = response.body()?.title!!
             } else {
                 Log.d("Response error", response.errorBody().toString())
                 Log.d("Response code", response.code().toString())
