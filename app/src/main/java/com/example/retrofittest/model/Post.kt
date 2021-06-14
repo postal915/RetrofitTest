@@ -1,4 +1,4 @@
-package com.example.mdtp.stevdza.model
+package com.example.retrofittest.model
 
 import com.google.gson.annotations.SerializedName
 

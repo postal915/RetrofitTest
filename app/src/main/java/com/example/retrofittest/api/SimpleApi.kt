@@ -1,8 +1,9 @@
-package com.example.mdtp.stevdza.api
+package com.example.retrofittest.api
 
-import com.example.mdtp.stevdza.model.Post
+import com.example.retrofittest.model.Post
 import retrofit2.Response
 import retrofit2.http.GET
+import retrofit2.http.Path
 
 interface SimpleApi {
 

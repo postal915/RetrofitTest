@@ -1,7 +1,7 @@
-package com.example.mdtp.stevdza.repository
+package com.example.retrofittest.repository
 
-import com.example.mdtp.stevdza.api.RetrofitInstance
-import com.example.mdtp.stevdza.model.Post
+import com.example.retrofittest.api.RetrofitInstance
+import com.example.retrofittest.model.Post
 import retrofit2.Response
 
 class Repository {

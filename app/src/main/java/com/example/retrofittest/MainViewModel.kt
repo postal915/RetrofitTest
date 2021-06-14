@@ -1,11 +1,11 @@
-package com.example.mdtp.stevdza
+package com.example.retrofittest
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.mdtp.stevdza.model.Post
+import com.example.retrofittest.model.Post
 
-import com.example.mdtp.stevdza.repository.Repository
+import com.example.retrofittest.repository.Repository
 import kotlinx.coroutines.launch
 import retrofit2.Response
 

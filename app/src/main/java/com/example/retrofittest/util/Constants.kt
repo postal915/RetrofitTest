@@ -1,4 +1,4 @@
-package com.example.mdtp.stevdza.util
+package com.example.retrofittest.util
 
 class Constants {
 

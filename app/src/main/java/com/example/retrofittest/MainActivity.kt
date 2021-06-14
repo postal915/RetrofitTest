@@ -5,9 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.example.mdtp.stevdza.MainViewModel
-import com.example.mdtp.stevdza.MainViewModelFactory
-import com.example.mdtp.stevdza.repository.Repository
+import com.example.retrofittest.repository.Repository
 
 class MainActivity : AppCompatActivity() {
 
