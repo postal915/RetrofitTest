@@ -25,10 +25,17 @@ class MainActivity : AppCompatActivity() {
 
         button.setOnClickListener {
             val myNumber = number_editText.text.toString()
-            viewModel.getPost(myNumber.toInt())
-            viewModel.myResponse2.observe(this, Observer { response ->
+            viewModel.getCustomPosts(myNumber.toInt())
+            viewModel.myCustomPosts.observe(this, Observer { response ->
                 if (response.isSuccessful) {
                     textView.text = response.body().toString()
+                    response.body()?.forEach {
+                        Log.d("Response", it.userId.toString())
+                        Log.d("Response", it.id.toString())
+                        Log.d("Response", it.title)
+                        Log.d("Response", it.body)
+                        Log.d("Response", "----------")
+                    }
                 } else {
                     Log.d("Response error", response.errorBody().toString())
                     textView.text = response.code().toString()
