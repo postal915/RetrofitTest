@@ -8,11 +8,11 @@ import com.example.retrofittest.R
 import com.example.retrofittest.model.Post
 import kotlinx.android.synthetic.main.row_layout.view.*
 
-class MyAdapter : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
+class MyAdapter: RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
 
     private var myList = emptyList<Post>()
 
-    inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
+    inner class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyAdapter.MyViewHolder {
         return MyViewHolder(
