@@ -1,6 +1,7 @@
 package com.example.retrofittest
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -8,6 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.retrofittest.adapter.MyAdapter
 import com.example.retrofittest.databinding.ActivityMainBinding
+import com.example.retrofittest.model.Post
 import com.example.retrofittest.repository.Repository
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -29,10 +31,13 @@ class MainActivity : AppCompatActivity() {
         val viewModelFactory = MainViewModelFactory(repository)
         viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
 
-        viewModel.getCustomPosts(2, "id", "desc")
-        viewModel.myCustomPosts.observe(this, Observer { response ->
+        val myPost = Post(2, 2, "Stevdza-San", "Android Developer")
+        viewModel.pushPost2(2, 2, "Stevdza", "Android")
+        viewModel.myResponse.observe(this, Observer { response ->
             if (response.isSuccessful) {
-                response.body()?.let { myAdapter.setData(it) }
+                Log.d("Response", response.body().toString())
+                Log.d("Response", response.code().toString())
+                Log.d("Response", response.message().toString())
             } else {
                 Toast.makeText(this, response.code(), Toast.LENGTH_LONG).show()
             }
